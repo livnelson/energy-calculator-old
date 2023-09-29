@@ -1,0 +1,87 @@
+table {
+  width: 70vw; /* Ensure the table takes up the full width of its container */
+  border-collapse: collapse; /* Remove default cell spacing */
+  margin: auto;
+}
+
+th,
+td {
+  text-align: center; /* Center the text content horizontally in cells */
+  padding: 8px; /* Add some padding for better visual spacing */
+}
+
+/* Center-align the toggle-switch in table cells */
+td.toggle-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.table-header {
+  
+}
+
+.row-name {
+  text-align: center;
+}
+
+.own-button {
+  align-items: center;
+  color: #ffffff;
+  background-color: #0071bc;
+  border: 1px solid #0071bc;
+  font-size: 14px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+}
+
+.not-own-button {
+  color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+
+}
+
+.row-decrement {
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #5f5f5f;
+}
+
+.row-increment {
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #5f5f5f;
+}
+
+/* .input-div {
+  border: 1px solid #ccc;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+} */
+
+.row-input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80px;
+  text-align: center;
+}
+
+.totals {
+  background: #f1f3f4;
+}
