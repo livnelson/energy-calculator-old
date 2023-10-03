@@ -1,13 +1,21 @@
+/* Table Styles */
+.energy-calculator {
+  width: 50vw; /* Default width for desktop screens */
+  border: 1px solid #f1f3f4;
+  border-radius: 5px;
+  margin: auto;
+}
+
 table {
-  width: 70vw; /* Ensure the table takes up the full width of its container */
-  border-collapse: collapse; /* Remove default cell spacing */
+  width: 50vw; /* Default width for desktop screens */
+  border-collapse: collapse;
   margin: auto;
 }
 
 th,
 td {
-  text-align: center; /* Center the text content horizontally in cells */
-  padding: 8px; /* Add some padding for better visual spacing */
+  text-align: center;
+  padding: 5px;
 }
 
 /* Center-align the toggle-switch in table cells */
@@ -15,73 +23,147 @@ td.toggle-cell {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
-.table-header {
-  
-}
-
-.row-name {
-  text-align: center;
-}
-
-.own-button {
-  align-items: center;
-  color: #ffffff;
-  background-color: #0071bc;
-  border: 1px solid #0071bc;
-  font-size: 14px;
-  border-radius: 50%;
-  height: 24px;
-  width: 24px;
-}
-
+/* Button Styles */
+.own-button,
 .not-own-button {
   color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 50%;
   height: 24px;
   width: 24px;
-
+  cursor: pointer;
 }
 
-.row-decrement {
-  margin-left: 8px;
-  margin-right: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  color: #5f5f5f;
+.own-button {
+  background-color: #0071bc;
+  border: 1px solid #0071bc;
+  font-size: 14px;
 }
 
+/* Quantity Row Styles */
+.quantity-row {
+  width: 100px;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.row-decrement, 
 .row-increment {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 0 8px;
   border: 1px solid #ccc;
   border-radius: 3px;
   color: #5f5f5f;
+  align-items: center;
+  cursor: pointer;
 }
 
-/* .input-div {
-  border: 1px solid #ccc;
-  max-width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-} */
+.row-decrement:hover, 
+.row-increment:hover {
+  background-color: #0071bc;
+  border: 1px solid #0071bc;
+  color: #fff;
+}
 
-.row-input {
+/* Input Styles */
+.usage-row-input, 
+input.power-row-input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 3px;
   padding-top: 6px;
   padding-bottom: 6px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 80px;
+  margin-right: 8px;
+  width: 60px;
   text-align: center;
 }
 
-.totals {
+/* Always show the default arrows on input fields with classname 'usage-row-input'
+For WebKit-based browsers (Chrome, Safari) */
+input.usage-row-input[type="number"]::-webkit-inner-spin-button,
+input.usage-row-input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1; /* Ensure arrows are always visible */
+}
+
+/* Remove the default arrows on input fields with classname 'power-row-input' */
+input.power-row-input[type="number"]::-webkit-inner-spin-button,
+input.power-row-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; /* This removes the margin for Firefox */
+}
+
+/* Total Bar Styles */
+.total-bar {
+  width: 50vw; /* Default width for desktop screens */
   background: #f1f3f4;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+.totals {
+  width: 50vw; /* Default width for desktop screens */
+  text-align: right;
+  margin: auto;
+  padding: 10px;
+}
+
+.total-sum {
+  margin: 0 24px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+/* Media Query for Mobile */
+@media (max-width: 767px) {
+  /* Adjusted table width and centered horizontally */
+  table {
+    width: 90vw;
+    margin: auto;
+  }
+
+  /* Full width for mobile screens and center-align text */
+  .total-bar, 
+  .totals {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Left-align text in row-name class */
+  .row-name {
+    text-align: left;
+  }
+
+  /* Align rows at the top of each cell within the table */
+  tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  /* Set font size to 12px for table body */
+  th, td {
+    flex: 1; /* Equal column width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the top */
+    text-align: center; /* Center-align the text in all columns */
+    font-size: 12px; /* Set font size to 12px for table body */
+  }
+
+  /* Center-align the text in table header cells */
+  th {
+    text-align: center;
+  }
 }

@@ -1,7 +1,8 @@
 /* ToggleSwitch.css */
 .toggle-switch {
-  width: 54px;
-  height: 24px;
+  width: 50px;
+  height: 26px;
+  padding-left: 2px;
   background-color: #ccc;
   border-radius: 15px;
   display: flex;
@@ -9,28 +10,23 @@
   cursor: pointer;
   position: relative;
   transition: background-color 0.3s ease;
+  overflow: hidden; /* Hide slider overflow */
 }
 
-.toggle-switch .slider {
+.toggle-switch
+.slider {
   width: 22px;
   height: 22px;
   background-color: white;
   border-radius: 50%;
   transition: transform 0.3s ease;
+  transform: translateX(0); /* Initial position */
 }
 
 .toggle-switch.on {
   background-color: #0071bc;
 }
 
-.toggle-switch.off {
-  background-color: #ccc;
-}
-
 .toggle-switch.on .slider {
-  transform: translateX(30px); /* Slide to the right when on */
-}
-
-.toggle-switch.off .slider {
-  transform: translateX(0); /* Slide to the left when off */
+  transform: translateX(26px); /* Slide to the right when on */
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import SummableTable from "./SummableTable"
-import GeneralHousehold from "./GeneralHousehold"
+// import GeneralHousehold from "./GeneralHousehold"
 import '../styles/App.css'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <GeneralHousehold />
+      {/* <GeneralHousehold /> */}
       <SummableTable />
     </div>
   )
